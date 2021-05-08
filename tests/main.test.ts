@@ -1,5 +1,5 @@
-import { readFirstLine } from "../src/main";
 import * as path from "path";
+import readFirstLine = require("../src/main");
 
 test("success read", async () => {
   const firstLine = await readFirstLine(path.join(__dirname, "test-file.txt"));

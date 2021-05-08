@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-export function readFirstLine(filePath: string): Promise<string> {
+function readFirstLine(filePath: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const rs = fs.createReadStream(filePath, { encoding: "utf8" });
     let acc = "";
@@ -19,3 +19,5 @@ export function readFirstLine(filePath: string): Promise<string> {
       });
   });
 }
+
+export = readFirstLine;
