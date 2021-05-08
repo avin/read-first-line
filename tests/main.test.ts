@@ -1,4 +1,4 @@
-import readFirstLine from "../src/main";
+import { readFirstLine } from "../src/main";
 import * as path from "path";
 
 test("success read", async () => {
