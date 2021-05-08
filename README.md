@@ -1,6 +1,6 @@
 # Read-first-line
 
-Read first line of the file
+Read first line of the file. Works fine with LF and CRLF line endings.
 
 ## Install
 

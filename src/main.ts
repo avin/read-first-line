@@ -7,7 +7,10 @@ function readFirstLine(filePath: string): Promise<string> {
     let pos = 0;
     let index: number;
     rs.on("data", function (chunk: string) {
-      index = chunk.indexOf("\n");
+      index = chunk.indexOf("\r\n");
+      if (index === -1) {
+        index = chunk.indexOf("\n");
+      }
       acc += chunk;
       index !== -1 ? rs.close() : (pos += chunk.length);
     })
