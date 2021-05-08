@@ -1,7 +1,7 @@
 import * as path from "path";
 import readFirstLine = require("../src/main");
 
-test("success read", async () => {
+test("success read LF", async () => {
   const firstLine = await readFirstLine(path.join(__dirname, "test-lf.txt"));
   expect(firstLine).toBe("first line");
 });
@@ -13,6 +13,12 @@ test("success CRLF read", async () => {
 
 test("success windows-1251 read", async () => {
   const firstLine = await readFirstLine(path.join(__dirname, "test-windows-1251.txt"));
+  expect(firstLine).toBe("first line");
+});
+
+
+test("success read one-line file", async () => {
+  const firstLine = await readFirstLine(path.join(__dirname, "test-one-line.txt"));
   expect(firstLine).toBe("first line");
 });
 

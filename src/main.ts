@@ -15,7 +15,10 @@ function readFirstLine(filePath: string): Promise<string> {
       index !== -1 ? rs.close() : (pos += chunk.length);
     })
       .on("close", function () {
-        resolve(acc.slice(0, pos + index));
+        if (index !== -1) {
+          return resolve(acc.slice(0, pos + index));
+        }
+        resolve(acc.slice(0, pos));
       })
       .on("error", function (err: Error) {
         reject(err);
