@@ -4,7 +4,7 @@ Read first line of the file. Works fine with LF and CRLF line endings.
 
 ## Install
 
-```bazaar
+```sh
 npm install read-first-line
 ```
 
